@@ -8,4 +8,5 @@ export default defineConfig({
     port: Number(process.env.PORT),
   },
   plugins: [react(), vercel()],
+  base: '/',
 });
