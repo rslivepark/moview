@@ -1,14 +1,19 @@
-import { useQuery } from '@tanstack/react-query';
-import api from '../utils/api';
+// import { useQuery } from '@tanstack/react-query';
+// import api from '../utils/api';
 
-const fetchUpcomingMovie = () => {
-  return api.get(`/movie/upcoming`);
-};
+// const fetchUpcomingMovie = () => {
+//   return api.get(`/movie/upcoming`);
+// };
 
-export const useUpcomingMovieQuery = () => {
-  return useQuery({
-    queryKey: ['upcoming'],
-    queryFn: fetchUpcomingMovie,
-    select: (result) => result.data,
-  });
-};
+// export const useUpcomingMovieQuery = () => {
+//   return useQuery({
+//     queryKey: ['upcoming'],
+//     queryFn: fetchUpcomingMovie,
+//     select: (result) => result.data,
+//   });
+// };
+
+import useFetchData from './useFetchData';
+
+export const useUpcomingMovieQuery = () =>
+  useFetchData('/movie/upcoming', 'upcoming');
