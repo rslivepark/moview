@@ -1,22 +1,15 @@
 import React from 'react';
 import { usePopularMovieQuery } from '../../hooks/usePopularMovie';
+import MediaListDisplay from '../components/MediaListDisplay';
 
 export default function PopularList({ title }) {
   const { data, isLoading, isError, error } = usePopularMovieQuery();
 
-  // console.log(data);
+  // console.log('usePopularMovieQuery', data);
 
   return (
     <div className='PopularList'>
-      <h1>{title}</h1>
-      <ul style={{ height: '200px', overflowY: 'auto' }}>
-        {data?.results?.map((item, index) => (
-          <li key={index}>
-            <h3>{item.title}</h3>
-            <p>{item.release_date}</p>
-          </li>
-        ))}
-      </ul>
+      <MediaListDisplay title={title} dataKey={data} isMovie={true} />;
     </div>
   );
 }

@@ -8,7 +8,7 @@ import TVPopularList from './series/TVPopularList';
 
 export default function MediaList() {
   return (
-    <div className='MovieList'>
+    <div className='MediaList'>
       <PopularList title={'🎬 Popular Movie'} />
       <TVPopularList title={'📺 Popular TV'} />
       <TopRatedList title={'🎬 Top Rated Movie'} />
